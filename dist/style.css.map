@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"style.css"}
+{"version":3,"sources":["../scss/globals/_boilerplate.scss"],"names":[],"mappings":"AACA,qBACI,qBAAA,CAGJ,gBACI,QAAA,CAEJ,KACI,eAAA,CACA,gBAAA,CAEJ,YACA,cAAA,CACA,aAAA,CAEA,6BACI,YAAA,CAKJ,uCACE,qBAGE,mCAAA,CACA,sCAAA,CACA,oCAAA,CACA,+BAAA,CAAA","file":"style.css"}
