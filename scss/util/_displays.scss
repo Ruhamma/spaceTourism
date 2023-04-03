@@ -1,0 +1,25 @@
+@use "functions" as *;
+.flex{
+    display: flex;
+    gap:gap($gap);
+}
+.grid{
+    display: grid;
+    gap:gap($gap);
+}
+.container{
+    padding-inline:2em;
+    max-width: 80rem;
+    margin-inline: auto;
+}
+.screenReader-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0); 
+    white-space: nowrap;
+    border: 0;
+}

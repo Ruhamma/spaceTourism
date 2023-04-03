@@ -2,3 +2,6 @@
 @function em($px){
     @return math.div($px,16) + em;
 }
+@function gap($gap){
+    @return var($gap,1rem);
+}
