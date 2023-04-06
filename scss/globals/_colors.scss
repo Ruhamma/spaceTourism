@@ -3,3 +3,21 @@ $light:hsl(231,77%,90%);
 $white:hsl(0,0%,100%);
 
 
+.dark{
+    background-color: $dark;
+}
+.light{
+    background-color: $light;
+}
+.white{
+    background-color: $white;
+}
+.tx-dark{
+    color: $dark;
+}
+.tx-light{
+    color: $light;
+}
+.tx-white{
+    color: $white;
+}
