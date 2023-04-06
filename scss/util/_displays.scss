@@ -1,25 +1,45 @@
 @use "functions" as *;
-.flex{
-    display: flex;
-    gap:gap($gap);
+@use "fonts" as *;
+@use "../globals/colors" as *;
+.flex {
+  display: flex;
+  // gap:gap($gap);
 }
-.grid{
-    display: grid;
-    gap:gap($gap);
+.grid {
+  display: grid;
+  // gap:gap($gap);
 }
-.container{
-    padding-inline:2em;
-    max-width: 80rem;
-    margin-inline: auto;
+.container {
+  padding-inline: 2em;
+  max-width: 80rem;
+  margin-inline: auto;
 }
-.screenReader-only{
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0); 
-    white-space: nowrap;
-    border: 0;
+.screenReader-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/*select everything that has a sibling before it*/
+.flow > * + * {
+  margin-top: 1rem;
+  outline: 1px solid red;
+}
+.number {
+  font-family: $ff-barlowCondensed;
+  font-size: $fs-500;
+  text-transform: uppercase;
+  letter-spacing: 0.295rem;
+}
+.number span {
+  margin-right: 0.5rem;
+  font-weight: 700;
+  color: $white;
+  opacity: 25%;
 }
