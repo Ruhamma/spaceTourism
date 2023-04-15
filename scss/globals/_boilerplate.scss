@@ -26,7 +26,14 @@ display: block;
 button,textarea,select,input{
     font: inherit;
 }
-
+a{
+  text-decoration: none;
+  color: $white;
+}
+button{
+  outline: none;
+  border: none;
+}
 
 // removing animations for people who turned them off
 @media (prefers-reduced-motion: reduce) {  

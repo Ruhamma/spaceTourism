@@ -1,6 +1,32 @@
 @use "functions" as *;
 @use "fonts" as *;
 @use "../globals/colors" as *;
+@mixin list {
+  width: fit-content;
+  position: relative;
+  cursor: pointer;
+}
+@mixin underline {
+  &:not(.active) {
+    &::after {
+      content: " ";
+      position: absolute;
+      transform: scaleX(0);
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 100%;
+      background-color: $white;
+      opacity: 0.25;
+      transition: transform 0.3s ease-in;
+      transform-origin: bottom right;
+    }
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+}
 .flex {
   display: flex;
   // gap:gap($gap);
@@ -42,4 +68,88 @@
   font-weight: 700;
   color: $white;
   opacity: 25%;
+}
+.lg-btn {
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 50%;
+  padding: 0 2em;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  transition: 0.3s ease-in;
+  &:hover {
+    box-shadow: 2px 2px 1px 80px rgba(100, 100, 100, 0.2);
+  }
+}
+
+.active {
+  border-bottom: 3px solid white;
+}
+ol {
+  list-style-type: none;
+  counter-reset: li;
+
+  li {
+    @include list;
+    &::before {
+      counter-increment: li;
+      content: counter(li, decimal-leading-zero);
+      margin-right: 0.5em;
+      font-weight: 700;
+    }
+    @include underline;
+  }
+}
+
+ul {
+  list-style: none;
+  li {
+    @include list;
+    @include underline;
+  }
+}
+.dot-indicator {
+  .active {
+    border: none;
+    opacity: 1;
+  }
+  button {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: $white;
+    opacity: 0.25;
+    transition: opacity 0.3s ease-in;
+    &:not(.active) {
+      &:hover {
+        opacity: 0.75;
+      }
+    }
+  }
+}
+
+.nmbr-link{
+    width: 200px;
+    height: 200px;
+    gap: 5px;
+    .active {
+    border: none;
+    background-color: $white;
+    color:$dark;
+    }
+    button{
+        background-color: $dark;
+        color: $white;
+        font-size: 1.5rem;
+        display: block;
+        border-radius: 50%;
+        aspect-ratio: 1 ;
+        border: 2px solid rgba(100,100,100,0.5);
+        transition: border-color 0.3s ease-in;
+        &:hover{
+            border-color: $white;
+        }
+    }
 }

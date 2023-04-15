@@ -14,7 +14,15 @@ $fs-900: 9.75rem;
 $ff-bellefair: "Bellefair", serif;
 $ff-barlowCondensed: "Barlow Condensed", sans-serif;
 $ff-Barlow: "Barlow", sans-serif;
-
+.ff-bellefair{
+  font-family: $ff-bellefair;
+}
+.ff-barlowCondensed{
+  font-family: $ff-barlowCondensed;
+}
+.ff-Barlow{
+  font-family: $ff-Barlow;
+}
 .fs-200 {
   font-size: $fs-200;
 }
