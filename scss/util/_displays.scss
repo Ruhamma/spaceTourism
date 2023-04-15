@@ -46,8 +46,8 @@
   place-items: center;
   text-align: center;
   padding-inline: 1rem;
-  &>*{
-        max-width: 50ch;
+  & > * {
+    max-width: 50ch;
   }
   @include breakPoint-down(large) {
     text-align: left;
@@ -114,7 +114,6 @@
 ol {
   list-style-type: none;
   counter-reset: li;
-
   li {
     @include list;
     &::before {

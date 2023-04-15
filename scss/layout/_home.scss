@@ -1,4 +1,5 @@
 @use "../util/breakpoint" as *;
+@use "../globals/colors" as *;
 @mixin bg-info {
   background-repeat: no-repeat;
   background-size: cover;
@@ -13,7 +14,7 @@
     @include bg-info;
   }
   @include breakPoint-down(large) {
-    background-position: right ;
+    background-position: right;
     background-image: url("../../img/home/background-home-desktop.jpg");
     @include bg-info;
   }
@@ -22,6 +23,44 @@
     @include breakPoint-down(large) {
       padding-bottom: max(6rem, 20vh);
       align-items: end;
+    }
+  }
+  .nav-toggle {
+    display: none;
+    @include breakPoint(medium) {
+      display: block;
+      position: absolute;
+      z-index: 20;
+      top: 2rem;
+      right: 1rem;
+      width: 1.5rem;
+      background: transparent;
+      background-image: url("../../img/shared/icon-hamburger.svg");
+      background-repeat: no-repeat;
+      aspect-ratio: 1;
+    }
+  }
+  #navigation {
+    background: rgba(0, 0, 0, 0.95);
+    transform: translateX(100%);
+    @include breakPoint(medium) {
+      flex-direction: column;
+      position: fixed;
+      inset: 0 0 0 30%;
+      z-index: 10;
+      padding: min(20rem, 15vh) 2rem;
+      gap: 2.5rem;
+      li {
+        &:hover::after {
+          transform: scaleX(0);
+        }
+      }
+    }
+  }
+  @supports (backdrop-filter: blur(1rem)) {
+    #navigation {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(2rem);
     }
   }
 }

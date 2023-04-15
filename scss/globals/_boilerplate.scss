@@ -11,6 +11,9 @@ body,h1,h2,h3,p{
 h1,h2,h3,p{
   font-weight: 400;
 }
+ol,ul{
+  margin: 0;
+}
 body{
     font-family: $ff-Barlow;
     font-size:$fs-400;
@@ -20,6 +23,7 @@ body{
     grid-template-rows: min-content 1fr;
     background-color: $dark;
     color:$white;
+    overflow:hidden;
 }
 img,picture{
 max-width: 100%;

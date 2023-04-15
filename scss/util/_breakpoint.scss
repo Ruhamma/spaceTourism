@@ -1,8 +1,8 @@
 @use "functions" as *;
 $breakpoints-up: (
-  "medium": em(700),
-  "large": em(900),
-  "x-large": em(1440),
+ "small": em(699.9),
+  "medium": 35em,
+  "large": 45em,
 );
 
 $breakpoints-down: (
