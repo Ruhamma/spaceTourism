@@ -13,7 +13,7 @@
     @include bg-info;
   }
   @include breakPoint-down(large) {
-    background-position: right center;
+    background-position: right ;
     background-image: url("../../img/home/background-home-desktop.jpg");
     @include bg-info;
   }
