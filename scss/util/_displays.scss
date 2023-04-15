@@ -1,6 +1,7 @@
 @use "functions" as *;
 @use "fonts" as *;
 @use "../globals/colors" as *;
+@use "breakpoint" as *;
 @mixin list {
   width: fit-content;
   position: relative;
@@ -29,16 +30,41 @@
 }
 .flex {
   display: flex;
-  gap:gap(--gap,1rem);
+  gap: gap(--gap, 1rem);
 }
 .grid {
   display: grid;
-   gap:gap(--gap,1rem);
+  gap: gap(--gap, 1rem);
 }
 .container {
   padding-inline: 2em;
   max-width: 80rem;
   margin-inline: auto;
+}
+.grid-container {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding-inline: 1rem;
+  &>*{
+        max-width: 50ch;
+  }
+  @include breakPoint-down(large) {
+    text-align: left;
+    gap: gap(--gap, 2rem);
+    grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(
+        2rem,
+        1fr
+      );
+    & > *:first-child {
+      grid-column: 2;
+      outline: 1px solid red;
+    }
+    & > *:last-child {
+      grid-column: 3;
+      outline: 1px solid green;
+    }
+  }
 }
 .screenReader-only {
   position: absolute;
@@ -70,6 +96,7 @@
   opacity: 25%;
 }
 .lg-btn {
+  font-size: 2rem;
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 50%;
@@ -130,26 +157,26 @@ ul {
   }
 }
 
-.nmbr-link{
-    width: 200px;
-    height: 200px;
-    gap: 5px;
-    .active {
+.nmbr-link {
+  width: 200px;
+  height: 200px;
+  gap: 5px;
+  .active {
     border: none;
     background-color: $white;
-    color:$dark;
+    color: $dark;
+  }
+  button {
+    background-color: $dark;
+    color: $white;
+    font-size: 1.5rem;
+    display: block;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    border: 2px solid rgba(100, 100, 100, 0.5);
+    transition: border-color 0.3s ease-in;
+    &:hover {
+      border-color: $white;
     }
-    button{
-        background-color: $dark;
-        color: $white;
-        font-size: 1.5rem;
-        display: block;
-        border-radius: 50%;
-        aspect-ratio: 1 ;
-        border: 2px solid rgba(100,100,100,0.5);
-        transition: border-color 0.3s ease-in;
-        &:hover{
-            border-color: $white;
-        }
-    }
+  }
 }

@@ -1,56 +1,116 @@
 @use "../globals/typography" as *;
+@use "../util/breakpoint" as *;
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Barlow:wght@400;700&family=Bellefair&display=swap");
 /*font size*/
-$fs-200: 0.875rem;
-$fs-300: 1rem;
-$fs-400: 1.125rem;
+$fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
+$fs-800: 3.5rem;
+$fs-700: 1.5rem;
+$fs-600: 1rem;
 $fs-500: 1.75rem;
-$fs-600: 2rem;
-$fs-700: 3.5rem;
-$fs-800: 6.25rem;
-$fs-900: 9.75rem;
+$fs-400: 0.9375rem;
+$fs-300: 1rem;
+$fs-200: 0.875rem;
+.fs-200 {
+    font-size: $fs-200;
+  }
+  .fs-300 {
+    font-size: $fs-300;
+  }
+  .fs-400 {
+    font-size: $fs-400;
+  }
+  .fs-500 {
+    font-size: $fs-500;
+  }
+  .fs-600 {
+    font-size: $fs-600;
+  }
+  .fs-700 {
+    font-size: $fs-700;
+  }
+  .fs-800 {
+    font-size: $fs-800;
+  }
+  .fs-900 {
+    font-size: $fs-900;
+  }
+@include breakPoint-down(medium) {
+  $fs-800: 5rem;
+  $fs-700: 2.5rem;
+  $fs-600: 1.5rem;
+  $fs-400: 1rem;
+  .fs-400 {
+    font-size: $fs-400;
+  }
+  .fs-500 {
+    font-size: $fs-500;
+  }
+  .fs-600 {
+    font-size: $fs-600;
+  }
+  .fs-700 {
+    font-size: $fs-700;
+  }
+  .fs-800 {
+    font-size: $fs-800;
+  }
+  .fs-900 {
+    font-size: $fs-900;
+  }
+  .fs-900,
+  .fs-800,
+  .fs-700,
+  .fs-600 {
+    line-height: $lh;
+  }
+}
+@include breakPoint-down(large) {
+  $fs-800: 6.25rem;
+  $fs-700: 3.5rem;
+  $fs-600: 2rem;
+  $fs-400: 1.125rem;
+  .fs-200 {
+    font-size: $fs-200;
+  }
+  .fs-300 {
+    font-size: $fs-300;
+  }
+  .fs-400 {
+    font-size: $fs-400;
+  }
+  .fs-500 {
+    font-size: $fs-500;
+  }
+  .fs-600 {
+    font-size: $fs-600;
+  }
+  .fs-700 {
+    font-size: $fs-700;
+  }
+  .fs-800 {
+    font-size: $fs-800;
+  }
+  .fs-900 {
+    font-size: $fs-900;
+  }
 
+  .fs-900,
+  .fs-800,
+  .fs-700,
+  .fs-600 {
+    line-height: $lh;
+  }
+}
 /*font-family*/
 $ff-bellefair: "Bellefair", serif;
 $ff-barlowCondensed: "Barlow Condensed", sans-serif;
 $ff-Barlow: "Barlow", sans-serif;
-.ff-bellefair{
+.ff-bellefair {
   font-family: $ff-bellefair;
 }
-.ff-barlowCondensed{
+.ff-barlowCondensed {
   font-family: $ff-barlowCondensed;
 }
-.ff-Barlow{
+.ff-Barlow {
   font-family: $ff-Barlow;
-}
-.fs-200 {
-  font-size: $fs-200;
-}
-.fs-300 {
-  font-size: $fs-300;
-}
-.fs-400 {
-  font-size: $fs-400;
-}
-.fs-500 {
-  font-size: $fs-500;
-}
-.fs-600 {
-  font-size: $fs-600;
-}
-.fs-700 {
-  font-size: $fs-700;
-}
-.fs-800 {
-  font-size: $fs-800;
-}
-.fs-900 {
-  font-size: $fs-900;
-}
-
-.fs-900,
-.fs-800,
-.fs-700,
-.fs-600 {
-  line-height: $lh;
 }

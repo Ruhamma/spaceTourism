@@ -1,0 +1,27 @@
+@use "../util/breakpoint" as *;
+@mixin bg-info {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.home {
+  background-image: url("../../img/home/background-home-mobile.jpg");
+  @include bg-info;
+  background-position: bottom center;
+  @include breakPoint-down(medium) {
+    background-position: bottom center;
+    background-image: url("../../img/home/background-home-tablet.jpg");
+    @include bg-info;
+  }
+  @include breakPoint-down(large) {
+    background-position: right center;
+    background-image: url("../../img/home/background-home-desktop.jpg");
+    @include bg-info;
+  }
+
+  .grid-container {
+    @include breakPoint-down(large) {
+      padding-bottom: max(6rem, 20vh);
+      align-items: end;
+    }
+  }
+}
