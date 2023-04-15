@@ -1,20 +1,20 @@
 /*letter spacing*/
-$ls-one:.2969rem;
-$ls-two:.1688rem;
-$ls-three:.1469rem;
+$ls-one: 0.2969rem;
+$ls-two: 0.1688rem;
+$ls-three: 0.1469rem;
 
 /*line height*/
-$lh:1.1;
+$lh: 1.1;
 
-.ls-one{
-    letter-spacing: $ls-one;
+.ls-one {
+  letter-spacing: $ls-one;
 }
-.ls-two{
-    letter-spacing: $ls-two;
+.ls-two {
+  letter-spacing: $ls-two;
 }
-.ls-three{
-    letter-spacing: $ls-three;
+.ls-three {
+  letter-spacing: $ls-three;
 }
-.upppercase{
-    text-transform: uppercase;
+.uppercase {
+  text-transform: uppercase;
 }
