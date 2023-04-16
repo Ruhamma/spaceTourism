@@ -1,5 +1,12 @@
 const hamburger = document.querySelector(".nav-toggle");
-console.log(hamburger);
+const nav = document.querySelector("#navigation");
 hamburger.addEventListener("click", () => {
-  document.getElementById("navigation").style.transform = "translateX(0)";
+  nav.classList.toggle("t-zero");
+  if (nav.classList.contains("t-zero")) {
+    hamburger.style.backgroundImage =
+      '  url("../../img/shared/icon-close.svg")';
+  }else{
+     hamburger.style.backgroundImage =
+       '  url("../../img/shared/icon-hamburger.svg")';
+  }
 });

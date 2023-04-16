@@ -23,7 +23,7 @@ body{
     grid-template-rows: min-content 1fr;
     background-color: $dark;
     color:$white;
-    overflow:hidden;
+    overflow-x:hidden;
 }
 img,picture{
 max-width: 100%;
