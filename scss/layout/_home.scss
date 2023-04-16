@@ -28,9 +28,23 @@
   .logo {
     margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
   }
+
   .header {
     justify-content: space-between;
-    align-items: center;
+   
+    @include breakPoint-down(large) {
+      align-items: center;
+       &::after {
+      content: "";
+      display: block;
+      position: relative;
+      height: 1px;
+      width: 100%;
+      background: $light;
+      order: 1;
+      margin-right:-2.5rem;
+    }
+    }
   }
   .nav-toggle {
     display: none;
@@ -47,11 +61,13 @@
       aspect-ratio: 1;
     }
   }
-
+  nav {
+    order: 2;
+  }
   #navigation {
     background: rgba(0, 0, 0, 0.95);
     padding: 1.5em 0em;
-    gap:clamp(1.5rem, 5vw, 3.5rem);
+    gap: clamp(1.5rem, 5vw, 3.5rem);
     @include breakPoint(medium) {
       flex-direction: column;
       position: fixed;
@@ -75,12 +91,18 @@
         }
       }
     }
-}
-    @supports (backdrop-filter: blur(1rem)) {
-      #navigation {
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(2rem);
-      }
+    @include breakPoint-down(medium) {
+      padding-inline: clamp(3rem, 5vw, 7rem);
+    }
+    @include breakPoint-down(large) {
+      margin-block: 2rem;
     }
   }
-
+  @supports (backdrop-filter: blur(1rem)) {
+    #navigation {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(2rem);
+    }
+  }
+ 
+}
