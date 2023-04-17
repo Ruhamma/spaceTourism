@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="destination">
-
     <header class="header flex">
       <div class="logDiv">
         <img
@@ -51,25 +50,43 @@
       </nav>
     </header>
 
-    <main id="main" class="grid-container">
-       01 Pick your destination
+    <main id="main" class="grid-container container-destination">
+      <div>
+        <h1 class="number">
+          <span aria-hidden="true">01</span>Pick your destination
+        </h1>
+        <img src="../img/destination/image-moon.png" alt="" />
+      </div>
+      <div>
+        <ul class="flex">
+          <li class="active"><a href="">MOON</a></li>
+          <li><a href="">MARS</a></li>
+          <li><a href="">EUROPA</a></li>
+          <li><a href="">TITAN</a></li>
+        </ul>
 
-  Moon
-  Mars
-  Europa
-  Titan
+        <article>
+          <h2 class="fs-800 tx-white uppercase ff-bellefair">Moon</h2>
+          <br />
+          <p>
+            See our planet as you’ve never seen it before. A perfect relaxing
+            trip away to help regain perspective and come back refreshed. While
+            you’re there, take in some history by visiting the Luna 2 and Apollo
+            11 landing sites.
+          </p>
 
-  Moon
-
-  See our planet as you’ve never seen it before. A perfect relaxing trip away to help 
-  regain perspective and come back refreshed. While you’re there, take in some history 
-  by visiting the Luna 2 and Apollo 11 landing sites.
-
-  Avg. distance
-  384,400 km
-
-  Est. travel time
-  3 days
+          <div class="flex">
+            <div>
+              <h3>Avg. distance</h3>
+              <p>384,400 km</p>
+            </div>
+            <div>
+              <h3>Est.travel time</h3>
+              <p>3 days</p>
+            </div>
+          </div>
+        </article>
+      </div>
     </main>
 
     <script src="index.js"></script>
