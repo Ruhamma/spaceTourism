@@ -1,0 +1,56 @@
+@use "../globals/colors" as *;
+@use "../util/breakpoint" as *;
+.destination {
+  .grid-container {
+    --flow-space: 2rem;
+    grid-template-areas: "title" "image" "tabs" "content";
+    img {
+      grid-area: image;
+      max-width: 60%;
+    }
+    .flex {
+      justify-content: center;
+      --gap: 1.5rem;
+    }
+    ul {
+      padding-inline: 0;
+      grid-area: tabs;
+    }
+    .dest-info {
+      grid-area: content;
+    }
+    .dest-meta {
+      flex-direction: column;
+      border-top: 1px solid $light;
+      padding-top: 2.5rem;
+      margin-top: 2.5rem;
+      @include breakPoint-down(medium) {
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+      p {
+        font-size: 1.75rem;
+      }
+    }
+    @include breakPoint-down(large) {
+      justify-items: start;
+      grid-template-areas: ". title title ." ".image tabs ." ". image content .";
+      align-content: start;
+      img {
+        max-width: 90%;
+      }
+      .dest-meta {
+        justify-content: start;
+        --gap: min(5vw, 6rem);
+      }
+    }
+  }
+}
+
+.number {
+  grid-area: title;
+  @include breakPoint-down(medium) {
+    justify-self: start;
+    margin-top: 2rem;
+  }
+}

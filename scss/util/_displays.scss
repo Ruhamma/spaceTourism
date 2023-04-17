@@ -46,6 +46,7 @@
   place-items: center;
   text-align: center;
   padding-inline: 1rem;
+  padding-bottom: 3rem;
   & > * {
     max-width: 50ch;
   }
@@ -78,8 +79,7 @@
 
 /*select everything that has a sibling before it*/
 .flow > * + * {
-  margin-top: 1rem;
-  outline: 1px solid red;
+  margin-top: var(--flow-space,1rem);
 }
 .number {
   font-family: $ff-barlowCondensed;
