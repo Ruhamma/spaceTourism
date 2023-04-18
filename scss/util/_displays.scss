@@ -46,17 +46,19 @@
   place-items: center;
   text-align: center;
   padding-inline: 1rem;
-  padding-bottom: 3rem;
+
   & > * {
     max-width: 50ch;
   }
   @include breakPoint-down(large) {
     text-align: left;
-    gap: gap(--gap, 2rem);
+    column-gap: gap(--gap, 2rem);
     grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(
         2rem,
         1fr
       );
+    //padding-bottom: max(6rem, 20vh);
+    align-items: end;
     & > *:first-child {
       grid-column: 2;
     }
@@ -79,7 +81,7 @@
 
 /*select everything that has a sibling before it*/
 .flow > * + * {
-  margin-top: var(--flow-space,1rem);
+  margin-top: var(--flow-space, 1rem);
 }
 .number {
   font-family: $ff-barlowCondensed;
@@ -182,12 +184,7 @@ ul {
 .t-zero {
   transform: translateX(0) !important;
 }
-.grid-container {
-  @include breakPoint-down(large) {
-    padding-bottom: max(6rem, 20vh);
-    align-items: end;
-  }
-}
+
 .logo {
   margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
 }

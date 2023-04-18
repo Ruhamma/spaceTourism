@@ -59,16 +59,16 @@
       
     
         <ul class="flex">
-          <li class="active"><a href="">MOON</a></li>
-          <li><a href="">MARS</a></li>
-          <li><a href="">EUROPA</a></li>
-          <li><a href="">TITAN</a></li>
+          <li><a class="destinations">MOON</a></li>
+          <li><a class="destinations">MARS</a></li>
+          <li><a class="destinations">EUROPA</a></li>
+          <li><a class="destinations">TITAN</a></li>
         </ul>
 
         <article class="dest-info">
-          <h2 class="fs-800 uppercase ff-bellefair">Moon</h2>
+          <h2 class="fs-800 uppercase ff-bellefair" id="planetName">Moon</h2>
      
-          <p>
+          <p id="desc">
             See our planet as you’ve never seen it before. A perfect relaxing
             trip away to help regain perspective and come back refreshed. While
             you’re there, take in some history by visiting the Luna 2 and Apollo
@@ -78,17 +78,17 @@
           <div class="dest-meta flex">
             <div>
               <h3 class=" fs-200 tx-light uppercase">Avg. distance</h3>
-              <p class=" uppercase ">384,400 km</p>
+              <p class=" uppercase " id="distance">384,400 km</p>
             </div>
             <div>
               <h3 class="tx-light uppercase fs-200">Est.travel time</h3>
-              <p class=" uppercase">3 days</p>
+              <p class=" uppercase" id="travel">3 days</p>
             </div>
           </div>
         </article>
       </div>
     </main>
 
-    <script src="index.js"></script>
+    <script src="index.js" type="module"></script>
   </body>
 </html>

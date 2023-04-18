@@ -1,0 +1,54 @@
+@use "../util/breakpoint" as *;
+.crew {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../../img/crew/background-crew-mobile.jpg");
+  @include breakPoint-down(medium) {
+    background-image: url("../../img/crew/background-crew-tablet.jpg");
+  }
+  @include breakPoint-down(large) {
+    background-image: url("../../img/crew/background-crew-desktop.jpg");
+  }
+  .grid-container {
+    grid-template-areas: "title" "image" "tabs" "content";
+    padding-bottom: 0;
+   
+    .number{
+      grid-area: title;
+    }
+    img {
+      grid-area: image;
+      border-bottom: 1px solid white;
+      max-width: 60%;
+    }
+    .dot-indicator {
+      grid-area: tabs;
+    }
+    .crew-info {
+      grid-area: content;
+    }
+    @include breakPoint-down(medium) {
+      grid-template-areas: "title" "content" "tabs" "image";
+      img{
+        border-bottom: 0px;
+        max-width: 90%;
+      }
+      .number{
+        padding-bottom: 3rem;
+      }
+    }
+    @include breakPoint-down(large) {
+      grid-template-areas: ". title image ." ". content image ." ". tabs image . ";
+      .dot-indicator {
+        padding-bottom: 5.625rem;
+      }
+      .dot-indicator,
+      .crew-info {
+        justify-self: start;
+      }
+      img{
+        border-bottom: 0px;
+      }
+    }
+  }
+}

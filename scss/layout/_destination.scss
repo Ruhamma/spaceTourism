@@ -1,6 +1,14 @@
 @use "../globals/colors" as *;
 @use "../util/breakpoint" as *;
 .destination {
+  background-image: url("../../img/destination/background-destination-mobile.jpg");
+  background-size: cover;
+  @include breakPoint-down(medium) {
+    background-image: url("../../img/destination/background-destination-tablet.jpg");
+  }
+  @include breakPoint-down(large) {
+    background-image: url("../../img/destination/background-destination-desktop.jpg");
+  }
   .grid-container {
     --flow-space: 2rem;
     grid-template-areas: "title" "image" "tabs" "content";
@@ -33,7 +41,6 @@
       }
     }
     @include breakPoint-down(large) {
-      justify-items: start;
       grid-template-areas: ". title title ." ".image tabs ." ". image content .";
       align-content: start;
       img {
@@ -42,6 +49,9 @@
       .dest-meta {
         justify-content: start;
         --gap: min(5vw, 6rem);
+      }
+      ul {
+        justify-items: start;
       }
     }
   }
