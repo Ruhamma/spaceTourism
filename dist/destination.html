@@ -25,12 +25,12 @@
       </button>
       <nav>
         <ol id="navigation" class="flex" style="--gap: 7rem">
-          <li class="active">
+          <li >
             <a class="ff-barlowCondensed uppercase ls-two" href="index.html"
               >Home</a
             >
           </li>
-          <li>
+          <li aria-selected="true">
             <a
               class="ff-barlowCondensed uppercase ls-two"
               href="destination.html"
@@ -55,11 +55,11 @@
         <h1 class="number">
           <span aria-hidden="true">01</span>Pick your destination
         </h1>
-        <img src="../img/destination/image-moon.png" alt="" />
+        <img src="../img/destination/image-moon.png" alt="planet-image" id="planet-image" />
       
     
-        <ul class="flex">
-          <li><a class="destinations">MOON</a></li>
+        <ul class="flex" id="tabContainer">
+          <li><a class="destinations" aria-selected="true">MOON</a></li>
           <li><a class="destinations">MARS</a></li>
           <li><a class="destinations">EUROPA</a></li>
           <li><a class="destinations">TITAN</a></li>

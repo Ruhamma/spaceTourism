@@ -8,7 +8,7 @@
   cursor: pointer;
 }
 @mixin underline {
-  &:not(.active) {
+  &:not([aria-selected="true"]) {
     &::after {
       content: " ";
       position: absolute;
@@ -110,7 +110,7 @@
   }
 }
 
-.active {
+[aria-selected="true"] {
   border-bottom: 3px solid white;
   color: white;
 }
@@ -138,7 +138,7 @@ ul {
   }
 }
 .dot-indicator {
-  .active {
+  [aria-selected="true"] {
     border: none;
     opacity: 1;
   }
@@ -150,7 +150,7 @@ ul {
     background-color: $white;
     opacity: 0.25;
     transition: opacity 0.3s ease-in;
-    &:not(.active) {
+    &:not([aria-selected="true"]) {
       &:hover {
         opacity: 0.75;
       }
@@ -162,7 +162,7 @@ ul {
   width: 200px;
   height: 200px;
   gap: 5px;
-  .active {
+  [aria-selected="true"] {
     border: none;
     background-color: $white;
     color: $dark;
