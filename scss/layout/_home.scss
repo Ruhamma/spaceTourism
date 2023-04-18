@@ -17,7 +17,11 @@
     background-position: right;
     background-image: url("../../img/home/background-home-desktop.jpg");
     @include bg-info;
+    .grid-container{
+    padding-bottom: 10rem;
   }
+  }
+  
 }
   
  

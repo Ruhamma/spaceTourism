@@ -30,17 +30,47 @@ function changeScene(data, i) {
 }
 
 for (let i = 0; i < destinations.length; i++) {
-  
   destinations[i].addEventListener("click", () => {
-    
     console.log(tabContainer);
-tabContainer
-  .querySelector('[aria-selected="true"]')
-  .setAttribute("aria-selected", false);
+    tabContainer
+      .querySelector('[aria-selected="true"]')
+      .setAttribute("aria-selected", false);
 
     destinations[i].setAttribute("aria-selected", true);
     fetch("./data.json")
       .then((response) => response.json())
       .then((data) => changeScene(data, i));
+  });
+}
+
+
+const crew=document.querySelectorAll(".crews");
+const role=document.getElementById("role");
+const name = document.getElementById("name");
+const bio = document.getElementById("bio");
+const crewImage = document.getElementById("crewImage");
+const dots = document.getElementById("dots");
+
+console.log(crew);
+
+
+function changeCrewScene(data, i) {
+  name.innerHTML = data.crew[i].name;
+  role.innerHTML = data.crew[i].role;
+  bio.innerHTML = data.crew[i].bio;
+  crewImage.src = data.crew[i].images.png;
+}
+
+for (let i = 0; i < crew.length; i++) {
+  crew[i].addEventListener("click", () => {
+     
+    dots
+      .querySelector('[aria-selected="true"]')
+      .setAttribute("aria-selected", false);
+
+    crew[i].setAttribute("aria-selected", true);
+    fetch("./data.json")
+      .then((response) => response.json())
+      .then((data) => changeCrewScene(data, i));
   });
 }
