@@ -7,7 +7,7 @@
     <title>Space Travel</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="crew">
+  <body class="technology">
     <header class="header flex">
       <div class="logDiv">
         <img
@@ -25,12 +25,12 @@
       </button>
       <nav>
         <ol id="navigation" class="flex" style="--gap: 7rem">
-          <li >
+          <li>
             <a class="ff-barlowCondensed uppercase ls-two" href="index.html"
               >Home</a
             >
           </li>
-          <li >
+          <li>
             <a
               class="ff-barlowCondensed uppercase ls-two"
               href="destination.html"
@@ -38,11 +38,16 @@
               Destination</a
             >
           </li>
-          <li aria-selected="true">
-            <a class="ff-barlowCondensed uppercase ls-two" href="crew.html">Crew</a>
-          </li>
           <li>
-            <a class="ff-barlowCondensed uppercase ls-two" href="technology.html">
+            <a class="ff-barlowCondensed uppercase ls-two" href="crew.html"
+              >Crew</a
+            >
+          </li>
+          <li aria-selected="true">
+            <a
+              class="ff-barlowCondensed uppercase ls-two"
+              href="technology.html"
+            >
               Technology</a
             >
           </li>
@@ -50,31 +55,36 @@
       </nav>
     </header>
 
-    <main id="main" class="grid-container flow">
-      <h1 class="number"><span aria-hidden="true">02</span> Meet your crew</h1>
+    <main id="main" class="grid-container">
+      <h1 class="number"><span aria-hidden="true">03</span>Space launch 101</h1>
 
-      <div class="dot-indicator flex" id="dots">
-        <button aria-selected="true" class="crews"></button>
-        <button class="crews"></button>
-        <button class="crews"></button>
-        <button class="crews"></button>
+      <div class="nmbr-link flex">
+        <button aria-selected="true">1</button>
+        <button>2</button>
+        <button>3</button>
       </div>
-
-      <article class="crew-info">
+      <article class="tech-info">
         <header class="flow" style="--flow-space: 0.75rem; margin-bottom: 2rem">
-          <h2 class="fs-600 uppercase ff-bellefair" style="opacity: 0.5" id="role">
-            Commander
+          <h2 class="fs-300 uppercase ff-bellefair" style="opacity: 0.5">
+            The terminology ...
           </h2>
-          <p class="fs-700 uppercase ff-bellefair names" id="name">Douglas Hurley</p>
+          <p class="fs-700 uppercase ff-bellefair names" id="techName">
+            Space capsule
+          </p>
         </header>
-        <p style="opacity: 0.5" class="fs-400" id="bio">
-          Douglas Gerald Hurley is an American engineer, former Marine Corps
-          pilot and former NASA astronaut. He launched into space for the third
-          time as commander of Crew Dragon Demo-2.
+        <p style="opacity: 0.5" class="fs-400" id="techDesc">
+          A space capsule is an often-crewed spacecraft that uses a blunt-body
+          reentry capsule to reenter the Earth's atmosphere without wings. Our
+          capsule is where you'll spend your time during the flight. It includes
+          a space gym, cinema, and plenty of other activities to keep you
+          entertained.
         </p>
       </article>
-
-      <img src="../img/crew/image-douglas-hurley.png" alt="crew-image" id="crewImage" />
+      <img
+        src="../img/technology/image-launch-vehicle-portrait.jpg"
+        alt="planet-image"
+        id="planet-image"
+      />
     </main>
 
     <script src="index.js"></script>

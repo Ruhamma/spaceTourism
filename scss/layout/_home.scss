@@ -5,7 +5,7 @@
   background-size: cover;
 }
 .home {
-  background-image: url("../../img/home/background-home-mobile.jpg");
+  background-image: url("../../img/home/background-home-desktop.jpg");
   @include bg-info;
   background-position: bottom center;
   @include breakPoint-down(medium) {

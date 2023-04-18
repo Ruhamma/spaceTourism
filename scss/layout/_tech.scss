@@ -1,0 +1,52 @@
+@use "home" as *;
+@use "../util/breakpoint" as *;
+.technology {
+  background-image: url("../../img/technology/background-technology-mobile.jpg");
+  @include bg-info;
+  @include breakPoint-down(medium) {
+    background-image: url("../../img/technology/background-technology-tablet.jpg");
+    @include bg-info;
+  }
+  @include breakPoint-down(large) {
+    background-image: url("../../img/technology/background-technology-desktop.jpg");
+    @include bg-info;
+    .nmbr-link {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+  .grid-container {
+    --flow-space: 2rem;
+    grid-template-areas: "title" "tabs" "article" "image";
+    .number {
+      grid-area: title;
+    }
+    .nmbr-link {
+      grid-area: tabs;
+      align-self: center;
+    }
+    .tech-info {
+      grid-area: article;
+      align-self: center;
+    }
+    .planet-image {
+      grid-area: image;
+      max-width: 60%;
+      align-self: center;
+    }
+    @include breakPoint-down(medium) {
+      grid-template-areas: "title" "image" "tabs" "article";
+    }
+    @include breakPoint-down(large) {
+      grid-template-columns:
+        minmax(2rem, 4fr) minmax(2rem, 7fr) minmax(2rem, 40rem)
+        minmax(2rem, 0fr);
+      grid-template-areas: ". title title ." "tabs article image image ";
+
+      img {
+        max-width: 100%;
+        justify-self: flex-end;
+      }
+    }
+  }
+}

@@ -159,21 +159,19 @@ ul {
 }
 
 .nmbr-link {
-  width: 200px;
-  height: 200px;
-  gap: 5px;
   [aria-selected="true"] {
     border: none;
     background-color: $white;
     color: $dark;
   }
   button {
+    cursor: pointer;
     background-color: $dark;
     color: $white;
     font-size: 1.5rem;
-    display: block;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    aspect-ratio: 1;
     border: 2px solid rgba(100, 100, 100, 0.5);
     transition: border-color 0.3s ease-in;
     &:hover {
