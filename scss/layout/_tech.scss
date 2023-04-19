@@ -20,22 +20,28 @@
     grid-template-areas: "title" "tabs" "article" "image";
     .number {
       grid-area: title;
+      padding-bottom: 2rem;
     }
     .nmbr-link {
       grid-area: tabs;
       align-self: center;
+      padding: 1.875rem 0;
     }
     .tech-info {
       grid-area: article;
       align-self: center;
+      padding-bottom: 2rem;
     }
     .planet-image {
       grid-area: image;
       max-width: 60%;
       align-self: center;
     }
+
     @include breakPoint-down(medium) {
       grid-template-areas: "title" "image" "tabs" "article";
+      img {
+      }
     }
     @include breakPoint-down(large) {
       grid-template-columns:
@@ -43,6 +49,9 @@
         minmax(2rem, 0fr);
       grid-template-areas: ". title title ." "tabs article image image ";
 
+      .nmbr-link {
+        margin-right: 5rem;
+      }
       img {
         max-width: 100%;
         justify-self: flex-end;

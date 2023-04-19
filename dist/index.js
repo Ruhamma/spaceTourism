@@ -43,16 +43,14 @@ for (let i = 0; i < destinations.length; i++) {
   });
 }
 
-
-const crew=document.querySelectorAll(".crews");
-const role=document.getElementById("role");
+const crew = document.querySelectorAll(".crews");
+const role = document.getElementById("role");
 const name = document.getElementById("name");
 const bio = document.getElementById("bio");
 const crewImage = document.getElementById("crewImage");
 const dots = document.getElementById("dots");
 
 console.log(crew);
-
 
 function changeCrewScene(data, i) {
   name.innerHTML = data.crew[i].name;
@@ -63,7 +61,6 @@ function changeCrewScene(data, i) {
 
 for (let i = 0; i < crew.length; i++) {
   crew[i].addEventListener("click", () => {
-     
     dots
       .querySelector('[aria-selected="true"]')
       .setAttribute("aria-selected", false);
@@ -72,5 +69,32 @@ for (let i = 0; i < crew.length; i++) {
     fetch("./data.json")
       .then((response) => response.json())
       .then((data) => changeCrewScene(data, i));
+  });
+}
+
+const nmbr = document.querySelectorAll(".nmbr");
+const nmbrLink = document.querySelector(".nmbr-link");
+const techName = document.getElementById("techName");
+const techDesc = document.getElementById("techDesc");
+const vehicleImage = document.getElementById("vehicle-image");
+
+function changeNmbrScene(data, i) {
+  techName.innerHTML = data.technology[i].name;
+  techDesc.innerHTML = data.technology[i].description;
+  vehicleImage.src = data.technology[i].images.portrait;
+  console.log(vehicleImage.src);
+}
+
+
+for (let i = 0; i < nmbr.length; i++) {
+  nmbr[i].addEventListener("click", () => {
+    nmbrLink
+      .querySelector('[aria-selected="true"]')
+      .setAttribute("aria-selected", false);
+
+    nmbr[i].setAttribute("aria-selected", true);
+    fetch("./data.json")
+      .then((response) => response.json())
+      .then((data) => changeNmbrScene(data, i));
   });
 }
